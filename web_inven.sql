@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 13, 2023 at 07:32 AM
+-- Generation Time: Jun 14, 2023 at 10:35 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -33,6 +33,7 @@ CREATE TABLE `aset_auditorium` (
   `kuantitas` int(11) NOT NULL,
   `harga` int(20) NOT NULL,
   `tgl_pembelian` date DEFAULT NULL,
+  `foto` varchar(100) DEFAULT NULL,
   `nama_pemeriksa` varchar(40) NOT NULL,
   `tgl_diperiksa` date DEFAULT NULL,
   `catatan` varchar(500) NOT NULL,
@@ -71,9 +72,7 @@ INSERT INTO `aset_history` (`id`, `nama_aset`, `lokasi`, `waktu`, `status`, `ole
 (9, 'Kursi', 'Lab', '2023-06-13 05:09:00', 'Ditambahkan', 'John Doe'),
 (10, 'HP Desktop Pavilion', 'Lab', '2023-06-13 05:11:38', 'Ditambahkan', 'John Doe'),
 (11, 'Keyboard Mechanical Razer', 'Lab', '2023-06-13 05:16:29', 'Ditambahkan', 'John Doe'),
-(12, 'Printer HP', 'Lab', '2023-06-13 05:18:45', 'Ditambahkan', 'John Doe'),
-(13, 'Printer', 'Lab', '2023-06-13 05:26:11', 'Ditambahkan', 'Rizal Kadamong'),
-(14, 'Printer', 'Lab', '2023-06-13 05:26:22', 'Dihapus', 'Rizal Kadamong');
+(12, 'Printer HP', 'Lab', '2023-06-13 05:18:45', 'Ditambahkan', 'John Doe');
 
 -- --------------------------------------------------------
 
@@ -87,6 +86,7 @@ CREATE TABLE `aset_kantor` (
   `kuantitas` int(11) NOT NULL,
   `harga` int(20) NOT NULL,
   `tgl_pembelian` date DEFAULT NULL,
+  `foto` varchar(100) DEFAULT NULL,
   `nama_pemeriksa` varchar(40) NOT NULL,
   `tgl_diperiksa` date DEFAULT NULL,
   `catatan` varchar(500) NOT NULL,
@@ -106,6 +106,7 @@ CREATE TABLE `aset_kelas` (
   `kuantitas` int(11) NOT NULL,
   `harga` int(20) NOT NULL,
   `tgl_pembelian` date DEFAULT NULL,
+  `foto` varchar(100) NOT NULL,
   `nama_pemeriksa` varchar(40) NOT NULL,
   `tgl_diperiksa` date DEFAULT NULL,
   `catatan` varchar(500) NOT NULL,
@@ -125,7 +126,7 @@ CREATE TABLE `aset_lab` (
   `kuantitas` int(11) NOT NULL,
   `harga` int(20) NOT NULL,
   `tgl_pembelian` date DEFAULT NULL,
-  `foto` varchar(100) NOT NULL,
+  `foto` varchar(100) DEFAULT NULL,
   `nama_pemeriksa` varchar(40) NOT NULL,
   `tgl_diperiksa` date DEFAULT NULL,
   `catatan` varchar(500) NOT NULL,
@@ -282,7 +283,7 @@ CREATE TABLE `user` (
   `role` varchar(25) NOT NULL,
   `username` varchar(35) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `foto` varchar(200) NOT NULL,
+  `foto` varchar(200) DEFAULT NULL,
   `catatan` varchar(500) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -357,7 +358,7 @@ ALTER TABLE `aset_auditorium`
 -- AUTO_INCREMENT for table `aset_history`
 --
 ALTER TABLE `aset_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `aset_kantor`
@@ -375,7 +376,7 @@ ALTER TABLE `aset_kelas`
 -- AUTO_INCREMENT for table `aset_lab`
 --
 ALTER TABLE `aset_lab`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `pegawai`
