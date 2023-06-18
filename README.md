@@ -5,3 +5,5 @@ Nama-nama Anggota Kelompok :
 2. Ricard Daniel Rungkat (210211060010)
 3. Nadita Pujicahyani Widjoherno (210211060030)
 4. Utomo Galathya M. Manurung (210211060300)
+
+Link Website : https://project-uas-web-inventaris.000webhostapp.com/
